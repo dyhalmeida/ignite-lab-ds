@@ -3,11 +3,12 @@ import { clsx } from 'clsx'
 import { ReactNode } from 'react'
 export interface TextProps {
   size?: 'sm' | 'md' | 'lg',
-  asChildren?: boolean
+  asChildren?: boolean,
+  className?: string,
   children?: ReactNode
 }
 
-export function Text({ size = 'md', asChildren ,children }: TextProps) {
+export function Text({ size = 'md', asChildren, className, children }: TextProps) {
 
   const Component = asChildren ? Slot : 'span'
 
@@ -18,7 +19,8 @@ export function Text({ size = 'md', asChildren ,children }: TextProps) {
           'text-xs': size === 'sm',
           'text-sm': size === 'md',
           'text-md': size === 'lg',
-        }
+        },
+        className
       )}
     >
       {children}

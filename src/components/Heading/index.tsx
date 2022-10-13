@@ -4,10 +4,11 @@ import { ReactNode } from 'react'
 export interface HeadingProps {
   size?: 'sm' | 'md' | 'lg',
   asChildren?: boolean
-  children?: ReactNode
+  className?: string
+  children?: ReactNode,
 }
 
-export function Heading({ size = 'md', asChildren ,children }: HeadingProps) {
+export function Heading({ size = 'md', asChildren, className, children }: HeadingProps) {
 
   const Component = asChildren ? Slot : 'h2'
 
@@ -18,7 +19,8 @@ export function Heading({ size = 'md', asChildren ,children }: HeadingProps) {
           'text-lg': size === 'sm',
           'text-xl': size === 'md',
           'text-2xl': size === 'lg',
-        }
+        },
+        className
       )}
     >
       {children}
