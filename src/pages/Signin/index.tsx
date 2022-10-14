@@ -1,3 +1,4 @@
+import { FormEvent, useState } from "react";
 import { Checkbox } from "@radix-ui/react-checkbox";
 import { Envelope, Lock } from "phosphor-react";
 import { Button } from "../../components/Button";
@@ -7,6 +8,16 @@ import { Text } from "../../components/Text";
 import { TextInput } from "../../components/TextInput";
 
 export function Signin() {
+
+  const [isUserSigneddIn, setIsUserSignedIn] = useState(false)
+
+  function handleSignin(e: FormEvent) {
+    e.preventDefault()
+
+    setIsUserSignedIn(true)
+
+  }
+
   return (
     <div className="w-screen h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
       <header className="flex flex-col items-center">
@@ -22,7 +33,9 @@ export function Signin() {
         </Text>
       </header>
 
-      <form className="flex flex-col items-stretch w-full max-w-sm mt-10 gap-4">
+      <form onSubmit={handleSignin} className="flex flex-col items-stretch w-full max-w-sm mt-10 gap-4">
+        
+        {isUserSigneddIn && <Text>Login Success!</Text>}
 
         <label htmlFor="email" className="flex flex-col gap-3">
           <Text className="font-semibold">Endereço de e-mail</Text>

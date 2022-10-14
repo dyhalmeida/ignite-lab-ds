@@ -10,6 +10,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
+    "test-storybook": "test-storybook",
     "preci": "rm -rf node_modules",
     "ci": "yarn install --frozen-lockfile"
   },
