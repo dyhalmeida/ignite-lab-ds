@@ -24,6 +24,8 @@ This project was developed using the following technologies:
 
 - [ReactJS](https://reactjs.org/)
 - [Storybook](https://storybook.js.org/)
+- Storybook Testing
+- Mock Service Work
 - [ViteJS](https://vitejs.dev/)
 - [Radix](https://www.radix-ui.com/)
 - [Typescript](https://www.typescriptlang.org/)
@@ -49,6 +51,9 @@ $ yarn dev
 
 # Start the storybook
 $ yarn storybook
+
+# Run storybook test
+$ yarn test-storybook
 ```
 
 ## 💻 Project
